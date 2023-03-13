@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&family=Varela+Round&display=swap");
+
+* {
+  user-select: none;
+  font-family: sans-serif;
+}
+
+#start h1 {
+  font-family: "Rampart One", cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 80pt;
+}
+
+#playCard {
+  text-align: center;
+  width: 30%;
+  padding: 10px;
+  border-radius: 20px;
+  margin: auto;
+  font-size: 35pt;
+  box-shadow: #7e7e7e 8px 13px 50px 0px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-top: 10%;
+  font-family: "Varela Round", sans-serif;
+}
+
+#playCard:hover {
+  scale: 1.2;
+  transition: 0.5s;
+  box-shadow: #7e7e7e 5px 10px 20px 0px;
+}
