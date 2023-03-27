@@ -14,9 +14,10 @@
   </head>
   <!-- TO DO
   Main loc - tři buttony s názvy lokací a při najetí se objeví obrázek lokace, po kliknutí na button se přesměruje na lokaci
-  V každé lokaci si hráč vybere pokemona a používá tři útoky na zneškodnění, po vybrání útoku nastává cooldown než bude zase připraven
+  Používá tři útoky na zneškodnění, po vybrání útoku nastává cooldown než bude zase připraven
   S přibývající lokací pribývá i obtížnost zabití nepřítele
   Tutoriálek
+  Vytvořit back button po fightu
   -->
   <body>
     <div id="start">
@@ -32,8 +33,8 @@
       <p id="tutorialText">Prostě buď dobrej a vyhraj</p>
     </div>
     <div id="mainLoc">
-      <div id="firstLoc">
-        <p id="firstLocButton">Lokace číslo 1</p>
+      <div id="firstLocMenu">
+        <p id="firstLocMenuButton">Lokace číslo 1</p>
         <img
           src="./res/img/arenaOne.jpg"
           alt="Aréna č. 1"
@@ -42,8 +43,8 @@
         />
       </div>
 
-      <div id="secondLoc">
-        <p id="secondLocButton">Lokace číslo 2</p>
+      <div id="secondLocMenu">
+        <p id="secondLocMenuButton">Lokace číslo 2</p>
         <img
           src="./res/img/arenaTwo.jpg"
           alt="Aréna č. 2"
@@ -51,14 +52,39 @@
           id="arenaTwoPreview"
         />
       </div>
-      <div id="thirdLoc">
-        <p id="thirdLocButton">Lokace číslo 3</p>
+      <div id="thirdLocMenu">
+        <p id="thirdLocMenuButton">Lokace číslo 3</p>
         <img
           src="./res/img/arenaThree.jpg"
           alt="Aréna č. 3"
           draggable="false"
           id="arenaThreePreview"
         />
+      </div>
+    </div>
+    <div id="firstLoc">
+      <div id="firstLocButtons">
+        <p id="firstLocAttackOne">Normální útok: -5 HP</p>
+        <p id="firstLocAttackTwo">Kombinovaný útok: -15 HP</p>
+        <p id="firstLocAttackThree">Ultimátní útok: -25 HP</p>
+      </div>
+      <div id="firstLocPlayer">
+        <p id="firstLocPlayerHPCounter">Počet životů hráče: 100</p>
+        <img src="./res/img/pikachu.jpg" alt="Pikachu" id="firstLocPlayerImg" />
+      </div>
+      <div id="firstLocEnemy">
+        <p id="firstLocEnemyHPCounter">Počet životů nepřítele: 100</p>
+        <img
+          src="./res/img/charmander.jpg"
+          alt="Charmander"
+          id="firstLocEnemyImg"
+        />
+      </div>
+      <div id="firstLocEnemyWin">
+        <h1>Prohrál jsi!</h1>
+      </div>
+      <div id="firstLocPlayerWin">
+        <h1>Vyhrál jsi!</h1>
       </div>
     </div>
     <script src="./res/js/main.js"></script>
