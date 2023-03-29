@@ -32,6 +32,9 @@
       </div>
       <p id="tutorialText">Prostě buď dobrej a vyhraj</p>
     </div>
+
+    <!-- Hlavní lokace -->
+
     <div id="mainLoc">
       <div id="firstLocMenu">
         <p id="firstLocMenuButton">Lokace číslo 1</p>
@@ -62,6 +65,9 @@
         />
       </div>
     </div>
+
+    <!-- První bojová lokace -->
+
     <div id="firstLoc">
       <div id="firstLocButtons">
         <p id="firstLocAttackOne">Normální útok: -5 HP</p>
@@ -82,9 +88,50 @@
       </div>
       <div id="firstLocEnemyWin">
         <h1>Prohrál jsi!</h1>
+        <p id="fightBackButton">Vrátit se do hlavní lokace</p>
       </div>
+
       <div id="firstLocPlayerWin">
         <h1>Vyhrál jsi!</h1>
+        <p id="fightBackButton">Vrátit se do hlavní lokace</p>
+      </div>
+      
+    </div>
+
+    <!-- Druhá bojová lokace -->
+
+    <div id="secondLoc">
+      <div id="secondLocButtons">
+        <p id="secondLocAttackOne">Normální útok: -10 HP</p>
+        <p id="secondLocAttackTwo">Kombinovaný útok: -20 HP</p>
+        <p id="secondLocAttackThree">Ultimátní útok: -30 HP</p>
+      </div>
+
+      <div id="secondLocPlayer">
+        <p id="secondLocPlayerHPCounter">Počet životů hráče: 100</p>
+        <img
+          src="./res/img/pikachu.jpg"
+          alt="Pikachu"
+          id="secondLocPlayerImg"
+        />
+      </div>
+
+      <div id="secondLocEnemy">
+        <p id="secondLocEnemyHPCounter">Počet životů nepřítele: 150</p>
+        <img
+          src="./res/img/poliwhirl.jpg"
+          alt="Poliwhirl"
+          id="secondLocEnemyImg"
+        />
+      </div>
+      <div id="secondLocEnemyWin">
+        <h1>Prohrál jsi!</h1>
+        <p id="fightBackButton">Vrátit se do hlavní lokace</p>
+      </div>
+
+      <div id="secondLocPlayerWin">
+        <h1>Vyhrál jsi!</h1>
+        <p id="fightBackButton">Vrátit se do hlavní lokace</p>
       </div>
     </div>
     <script src="./res/js/main.js"></script>

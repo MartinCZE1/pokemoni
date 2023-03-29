@@ -19,6 +19,24 @@ const firstLocAttackThree = document.getElementById("firstLocAttackThree");
 let firstLocPlayerHP = 100;
 let firstLocEnemyHP = 100;
 
+const secondLocPlayerHPCounter = document.getElementById(
+  "secondLocPlayerHPCounter"
+);
+const secondLocEnemyHPCounter = document.getElementById(
+  "secondLocEnemyHPCounter"
+);
+
+const secondLocAttackOne = document.getElementById("secondLocAttackOne");
+const secondLocAttackTwo = document.getElementById("secondLocAttackTwo");
+const secondLocAttackThree = document.getElementById("secondLocAttackThree");
+
+let secondLocPlayerHP = 100;
+let secondLocEnemyHP = 100;
+
+const fightBackButton = document.getElementById("fightBackButton");
+
+//Start hry
+
 tutorialButton.onclick = () => {
   start.style.display = "none";
   tutorialButton.style.display = "none";
@@ -30,6 +48,8 @@ playButton.onclick = () => {
   tutorialButton.style.display = "none";
   mainLoc.style.display = "block";
 };
+
+//Hlavní lokace
 
 firstLocMenuButton.onmouseenter = () => {
   arenaOnePreview.style.display = "block";
@@ -55,10 +75,14 @@ thirdLocMenuButton.onmouseleave = () => {
   arenaThreePreview.style.display = "none";
 };
 
+//První boj
+
 firstLocMenuButton.onclick = () => {
   mainLoc.style.display = "none";
   firstLoc.style.display = "block";
-      
+  fightBackButton.style.display = "none";
+  firstLocPlayerWin.style.display = "none";
+  firstLocEnemyWin.style.display = "none";
   firstLocFight();
 };
 
@@ -69,16 +93,9 @@ function firstLocFight() {
     if (firstLocPlayerHP <= 0) {
       clearInterval(firstLocFightInterval);
       firstLocEnemyWin.style.display = "block";
-      endGame = setInterval(() => {
-        firstLoc.style.display = "none";
-        mainLoc.style.display = "block";
-        firstLocEnemyWin.style.display = "none";
-        firstLocPlayerHP = 100;
-        firstLocEnemyHP = 100;
-        clearInterval(endGame);
-      }, 1000);
+      fightBackButton.style.display = "block";
     }
-  }, 5000);
+  }, 100);
   firstLocAttackOne.onclick = () => {
     firstLocEnemyHP -= 5;
     firstLocEnemyHPCounter.innerHTML = `Počet životů nepřítele ${firstLocEnemyHP}`;
@@ -95,16 +112,72 @@ function firstLocFight() {
     firstLocEnemyDead();
   };
 }
+
 function firstLocEnemyDead() {
   if (firstLocEnemyHP <= 0) {
     clearInterval(firstLocFightInterval);
     firstLocPlayerWin.style.display = "block";
-    endGame = setInterval(() => {
-      firstLoc.style.display = "none";
-      mainLoc.style.display = "block";
-      firstLocPlayerWin.style.display = "none";
-      firstLocPlayerHP = 100;
-      firstLocEnemyHP = 100;clearInterval(endGame);
-    }, 1000);
+    fightBackButton.style.display = "block";
   }
 }
+
+fightBackButton.onclick = () => {
+  firstLoc.style.display = "none";
+  mainLoc.style.display = "block";
+  firstLocEnemyHP = 100;
+  firstLocPlayerHP = 100;
+};
+
+//Druhý boj
+
+secondLocMenuButton.onclick = () => {
+  mainLoc.style.display = "none";
+  secondLoc.style.display = "block";
+  fightBackButton.style.display = "none";
+  secondLocPlayerWin.style.display = "none";
+  secondLocEnemyWin.style.display = "none";
+  secondLocFight();
+};
+
+function secondLocFight() {
+  secondLocFightInterval = setInterval(() => {
+    secondLocPlayerHP -= 10;
+    secondLocPlayerHPCounter.innerHTML = `Počet životů hráče: ${secondLocPlayerHP}`;
+    if (secondLocPlayerHP <= 0) {
+      clearInterval(secondLocFightInterval);
+      secondLocEnemyWin.style.display = "block";
+      fightBackButton.style.display = "block";
+    }
+  }, 5000);
+  secondLocAttackOne.onclick = () => {
+    secondLocEnemyHP -= 10;
+    secondLocEnemyHPCounter.innerHTML = `Počet životů nepřítele ${secondLocEnemyHP}`;
+    secondLocEnemyDead();
+  };
+  secondLocAttackTwo.onclick = () => {
+    secondLocEnemyHP -= 20;
+    secondLocEnemyHPCounter.innerHTML = `Počet životů nepřítele ${secondLocEnemyHP}`;
+    secondLocEnemyDead();
+  };
+  secondLocAttackThree.onclick = () => {
+    secondLocEnemyHP -= 30;
+    secondLocEnemyHPCounter.innerHTML = `Počet životů nepřítele ${secondLocEnemyHP}`;
+    secondLocEnemyDead();
+  };
+}
+
+function secondLocEnemyDead() {
+  if (secondLocEnemyHP <= 0) {
+    clearInterval(secondLocFightInterval);
+    secondLocPlayerWin.style.display = "block";
+    fightBackButton.style.display = "block";
+  }
+}
+
+fightBackButton.onclick = () => {
+  firstLoc.style.display = "none";
+  secondLoc.style.display = "none";
+  mainLoc.style.display = "block";
+  secondLocEnemyHP = 100;
+  secondLocPlayerHP = 100;
+};
