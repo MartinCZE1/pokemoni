@@ -165,11 +165,6 @@
   padding: 15px;
 }
 
-#firstLocEnemyWin,
-#firstLocPlayerWin {
-  display: none;
-}
-
 /* 
 Druhá lokace
 */
@@ -190,7 +185,7 @@ Druhá lokace
 #secondLocEnemyImg {
   float: right;
   margin-top: 15%;
-  width: 25%;
+  width: 20%;
 }
 
 #secondLocAttackOne,
@@ -245,11 +240,102 @@ Druhá lokace
   padding: 15px;
 }
 
-#secondLocEnemyWin,
-#secondLocPlayerWin {
+#firstLocLoseFightBackButton,
+#firstLocWinFightBackButton,
+#secondLocLoseFightBackButton,
+#secondLocWinFightBackButton,
+#thirdLocLoseFightBackButton,
+#thirdLocWinFightBackButton {
   display: none;
+  cursor: pointer;
 }
 
-#fightBackButton {
+/* Třetí lokace */
+
+#thirdLoc {
+  background-image: url(../img/arenaThree.jpg);
   display: none;
+  height: 1080px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#thirdLocPlayerImg {
+  float: left;
+  margin-top: 20%;
+}
+
+#thirdLocEnemyImg {
+  float: right;
+  margin-top: 15%;
+  width: 15%;
+}
+
+#thirdLocAttackOne,
+#thirdLocAttackTwo,
+#thirdLocAttackThree {
+  width: 25%;
+  display: inline;
+  padding: 25px;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 3%;
+  font-size: 20pt;
+  background-color: #fff;
+  float: left;
+  transition: 0.5s;
+  cursor: pointer;
+  box-shadow: #7e7e7e 8px 13px 50px 0px;
+  font-family: "Varela Round", sans-serif;
+}
+
+#thirdLocButtons {
+  height: 150px;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+#thirdLocAttackOne:hover,
+#thirdLocAttackTwo:hover,
+#thirdLocAttackThree:hover {
+  scale: 1.2;
+  transition: 0.5s;
+  box-shadow: #7e7e7e 5px 10px 20px 0px;
+}
+
+#thirdLocPlayerHPCounter {
+  margin-top: 250px;
+  margin-left: 25px;
+  float: left;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+#thirdLocEnemyHPCounter {
+  margin-top: 160px;
+  margin-left: 1250px;
+  float: right;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+/*Oznámení výhry, prohry*/
+#firstLocEnemyWin,
+#firstLocPlayerWin,
+#secondLocEnemyWin,
+#secondLocPlayerWin,
+#thirdLocEnemyWin,
+#thirdLocPlayerWin {
+  display: none;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: #7e7e7e 8px 13px 50px 0px;
+  font-family: "Varela Round", sans-serif;
+  float: right;
+  width: 50%;
+  text-align: center;
 }
