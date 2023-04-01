@@ -305,13 +305,13 @@ function firstLocBackButtons() {
 function secondLocBackButtons() {
   secondLoc.style.display = "none";
   mainLoc.style.display = "block";
-  secondLocEnemyHP = 100;
+  secondLocEnemyHP = 150;
   secondLocPlayerHP = 100;
 }
 
 function thirdLocBackButtons() {
   thirdLoc.style.display = "none";
   mainLoc.style.display = "block";
-  thirdLocEnemyHP = 100;
+  thirdLocEnemyHP = 200;
   thirdLocPlayerHP = 100;
 }
